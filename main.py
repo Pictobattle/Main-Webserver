@@ -6,7 +6,6 @@ app = Flask(__name__)
 def main():
 	return "yo!"
 
-
 if __name__ == "__main__":
 	app.secret_key = 'Ymsf,sfatwBU!Iwruh,bus'
 	app.debug = True
