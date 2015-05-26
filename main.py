@@ -8,7 +8,7 @@ def main():
 
 @app.route('/favicon.ico')
 def favicon():
-	return redirect(url_for('static', filename='favicon-2.3.ico'))
+	return redirect(url_for('static', filename='favicon.ico'))
 
 if __name__ == "__main__":
 	app.secret_key = 'Ymsf,sfatwBU!Iwruh,bus'
