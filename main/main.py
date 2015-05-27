@@ -8,7 +8,7 @@ def main():
 
 @app.route('/post/record')
 def recordPost():
-	return redirect("/")
+	return redirect('/')
 
 #---------------------------------Static stuff:---------------------------------
 @app.route('/favicon.ico')
