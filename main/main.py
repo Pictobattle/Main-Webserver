@@ -6,6 +6,11 @@ app = Flask(__name__)
 def main():
 	return render_template('main.html')
 
+@app.route('/post/record')
+def recordPost():
+	return redirect("/")
+
+#---------------------------------Static stuff:---------------------------------
 @app.route('/favicon.ico')
 def favicon():
 	return redirect(url_for('static', filename='favicon.ico'))
