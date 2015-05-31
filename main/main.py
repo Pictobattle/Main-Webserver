@@ -8,8 +8,8 @@ def main():
 
 @app.route('/post/record')
 def recordPost():
-	x=str(request.form.get("5"))
-	return x
+	username=str(request.form.get("username"))
+	#password=
 	return redirect('/')
 
 #---------------------------------Static stuff:---------------------------------
@@ -23,4 +23,5 @@ if __name__ == "__main__":
 	app.run(
 		host='0.0.0.0',
 		port=4000
+		ssl_context=('/var/www/SSL/server.crt', '/var/www/SSL/server.key')
 		)
