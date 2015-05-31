@@ -8,7 +8,7 @@ def main():
 
 @app.route('/post/record')
 def recordPost():
-	x=request.form.get("5")
+	x=str(request.form.get("5"))
 	return x
 	return redirect('/')
 
