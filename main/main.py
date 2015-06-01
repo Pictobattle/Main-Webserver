@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-	return "poo"
 	return render_template('main.html')
 
 @app.route('/post/record')
