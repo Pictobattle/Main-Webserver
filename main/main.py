@@ -9,8 +9,11 @@ def main():
 @app.route('/post/record')
 def recordPost():
 	username=str(request.form.get("username"))
-	#password=
-	return redirect('/')
+	password=str(request.form.get("password"))
+	description=str(request.form.get("description"))
+	battle=str(request.form.get("battleSelector"))
+
+	return "Yo waddup" + str([username, password, description, battle])
 
 #---------------------------------Static stuff:---------------------------------
 
