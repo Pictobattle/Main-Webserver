@@ -13,7 +13,7 @@ def recordPost():
 	description=str(request.form.get("description"))
 	battle=str(request.form.get("battleSelector"))
 
-	return "Yo waddup" + str([username, password, description, battle])
+	return "Yo waddup " + str([username, password, description, battle])
 
 #---------------------------------Static stuff:---------------------------------
 
@@ -21,6 +21,11 @@ def recordPost():
 @app.errorhandler(404)
 def page_not_found(e):
 	return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def server_error(e):
+	return render_template('50x.html'), 404
+
 
 """@app.route('/favicon.ico')
 def favicon():
