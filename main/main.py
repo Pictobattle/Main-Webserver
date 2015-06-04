@@ -6,7 +6,11 @@ app = Flask(__name__)
 def main():
 	return render_template('main.html')
 
-@app.route('/post/record')
+@app.route('/postPicture')
+def postPicture():
+	return render_template('postPicture.html')
+
+@app.route('/postPicture/record')
 def recordPost():
 	username=str(request.form.get("username"))
 	password=str(request.form.get("password"))
@@ -20,11 +24,11 @@ def recordPost():
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)
 def page_not_found(e):
-	return render_template('404.html'), 404
+	return render_template('errorPages/404.html'), 404
 
 @app.errorhandler(500)
 def server_error(e):
-	return render_template('50x.html'), 500
+	return render_template('errorPages/50x.html'), 500
 
 
 """@app.route('/favicon.ico')
