@@ -12,7 +12,7 @@ def postPicture():
 
 
 #---------------------------------Static stuff:---------------------------------
-@app.route('/postPicture/record/', methods=['PUT'])
+@app.route('/postPicture/record/', methods=['post'])
 def recordPost():
 	username=str(request.form.get("username"))
 	password=str(request.form.get("password"))
