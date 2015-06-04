@@ -24,7 +24,7 @@ def page_not_found(e):
 
 @app.errorhandler(500)
 def server_error(e):
-	return render_template('50x.html'), 404
+	return render_template('50x.html'), 500
 
 
 """@app.route('/favicon.ico')
