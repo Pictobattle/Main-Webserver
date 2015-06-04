@@ -7,23 +7,21 @@
 <body>
 <h1>YO</h1>
 <form action="/postPicture/record/" method="post" enctype="multipart/form-data">
-  Title:
-  <INPUT TYPE="text" NAME="username"
-   SIZE="50" MAXLENGTH="40">
+    Username:
+    <INPUT TYPE="text" NAME="username"
+        SIZE="50" MAXLENGTH="40">
     <br>
-  Name:
-  <INPUT TYPE="text" NAME="password" SIZE="30" MAXLENGTH="40">
-    <br>
+    Password:
+    <INPUT TYPE="text" NAME="password" SIZE="30" MAXLENGTH="40">
+    <br><br>
+    Picto Battle?
     <input type="checkbox" name="battleSelector" value="True">
-    <br>
-    <br>
-   <TEXTAREA NAME="description"
-   wrap="soft" ROWS="3" COLS="25"></TEXTAREA>
-
-
+    <br><br>
+    Description:
+    <TEXTAREA NAME="description"
+        wrap="soft" ROWS="3" COLS="25"></TEXTAREA>
 <br><br>
-
-<INPUT TYPE="submit">
+<INPUT TYPE="submit" value="post!">
 </form>
 </body>
 </html>
