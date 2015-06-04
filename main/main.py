@@ -10,7 +10,9 @@ def main():
 def postPicture():
 	return render_template('postPicture.html')
 
-@app.route('/postPicture/record')
+
+#---------------------------------Static stuff:---------------------------------
+@app.route('/postPicture/record/', methods=['PUT'])
 def recordPost():
 	username=str(request.form.get("username"))
 	password=str(request.form.get("password"))
@@ -18,8 +20,6 @@ def recordPost():
 	battle=str(request.form.get("battleSelector"))
 
 	return "Yo waddup " + str([username, password, description, battle])
-
-#---------------------------------Static stuff:---------------------------------
 
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)

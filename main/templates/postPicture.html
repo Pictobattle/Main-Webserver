@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 <head>
 <title>Post a Picture</title>
@@ -5,5 +6,24 @@
 
 <body>
 <h1>YO</h1>
+<form action="/postPicture/record/" method="PUT" enctype="multipart/form-data">
+  Title:
+  <INPUT TYPE="text" NAME="username"
+   SIZE="50" MAXLENGTH="40">
+    <br>
+  Name:
+  <INPUT TYPE="text" NAME="password" SIZE="30" MAXLENGTH="40">
+    <br>
+    <input type="checkbox" name="battleSelector" value="True">
+    <br>
+    <br>
+   <TEXTAREA NAME="description"
+   wrap="soft" ROWS="3" COLS="25"></TEXTAREA>
+
+
+<br><br>
+
+<INPUT TYPE="submit">
+</form>
 </body>
 </html>
