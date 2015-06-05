@@ -27,7 +27,7 @@ def recordPost():
 
 
 	return "Yo waddup " + str([username, password, description, battle])'''
-	return str(request.get_json)
+	return jsonify(request.get_json)
 
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)
