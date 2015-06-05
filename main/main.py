@@ -14,7 +14,7 @@ def postPicture():
 #---------------------------------Static stuff:---------------------------------
 @app.route('/postPicture/record', methods=['post'])
 def recordPost():
-	'''username=request.form.get("username")
+	username=request.form.get("username")
 	password=request.form.get("password")
 	description=str(request.form.get("description"))
 	battle=str(request.form.get("battleSelector"))
@@ -26,8 +26,7 @@ def recordPost():
 		password = str(password)
 
 
-	return "Yo waddup " + str([username, password, description, battle])'''
-	return str(jsonify(request.get_json()))
+	return "Yo waddup " + str([username, password, description, battle])
 
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)
