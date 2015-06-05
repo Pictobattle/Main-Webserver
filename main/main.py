@@ -6,7 +6,7 @@ app = Flask(__name__)
 def main():
 	return render_template('main.html')
 
-@app.route('/postPicture/')
+@app.route('/postPicture')
 def postPicture():
 	return render_template('postPicture.html')
 
