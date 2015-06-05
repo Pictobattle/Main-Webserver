@@ -14,12 +14,20 @@ def postPicture():
 #---------------------------------Static stuff:---------------------------------
 @app.route('/postPicture/record/', methods=['post'])
 def recordPost():
-	username=str(request.form.get("username"))
-	password=str(request.form.get("password"))
+	'''username=request.form.get("username")
+	password=request.form.get("password")
 	description=str(request.form.get("description"))
 	battle=str(request.form.get("battleSelector"))
 
-	return "Yo waddup " + str([username, password, description, battle])
+
+	if username != None or password != None:
+		#this most likely means
+		username = str(username)
+		password = str(password)
+
+
+	return "Yo waddup " + str([username, password, description, battle])'''
+	return str(request.get_json)
 
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)

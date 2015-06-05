@@ -6,7 +6,7 @@
 
 <body>
 <h1>YO</h1>
-<form action="/postPicture/record/" method="post" enctype="multipart/form-data">
+<form action="/postPicture/record/" method="post" enctype="application/json">
     Username:
     <INPUT TYPE="text" NAME="username"
         SIZE="50" MAXLENGTH="40">
@@ -15,7 +15,7 @@
     <INPUT TYPE="text" NAME="password" SIZE="30" MAXLENGTH="40">
     <br><br>
     Picto Battle?
-    <input type="checkbox" name="battleSelector" value="True">
+    <input type="checkbox" name="battleSelector" value="True" checked>
     <br><br>
     Description:<br>
     <TEXTAREA NAME="description"
