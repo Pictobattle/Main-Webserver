@@ -12,7 +12,7 @@ def postPicture():
 
 
 #---------------------------------Static stuff:---------------------------------
-@app.route('/postPicture/record', methods=['post'])
+'''@app.route('/postPicture/record', methods=['post'])
 def recordPost():
 	username=request.form.get("username")
 	password=request.form.get("password")
@@ -26,7 +26,7 @@ def recordPost():
 		password = str(password)
 
 
-	return "Yo waddup " + str([username, password, description, battle])
+	return "Yo waddup " + str([username, password, description, battle])'''
 
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)
