@@ -47,7 +47,7 @@ if __name__ == "__main__":
 	app.secret_key = 'Ymsf,sfatwBU!Iwruh,bus'
 	app.debug = True
 	app.run(
-'''		host='0.0.0.0',
+		host='127.0.0.1',
 		port=4000
-		ssl_context=('/var/www/SSL/server.crt', '/var/www/SSL/server.key')'''
+		ssl_context=('/var/www/SSL/server.crt', '/var/www/SSL/server.key')
 		)
