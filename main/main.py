@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, jsonify
+from flask import Flask, render_template, redirect, url_for, request, jsonify, session
 
 app = Flask(__name__)
 
@@ -6,27 +6,24 @@ app = Flask(__name__)
 def main():
 	return render_template('main.html')
 
-@app.route('/postPicture')
+
+@app.route('/postPicture', methods=['POST','GET'])
 def postPicture():
-	return render_template('postPicture.html')
+	if request.method == 'POST':
+		username=request.form.get("username")
+		password=request.form.get("password")
+		description=str(request.form.get("description"))
+		battle=str(request.form.get("battleSelector"))
 
+		if username != None or password != None:
+			#this most likely means it is from app
+			username = str(username)
+			password = str(password)
+		#else:
 
-#---------------------------------Static stuff:---------------------------------
-'''@app.route('/postPicture/record', methods=['post'])
-def recordPost():
-	username=request.form.get("username")
-	password=request.form.get("password")
-	description=str(request.form.get("description"))
-	battle=str(request.form.get("battleSelector"))
-
-
-	if username != None or password != None:
-		#this most likely means
-		username = str(username)
-		password = str(password)
-
-
-	return "Yo waddup " + str([username, password, description, battle])'''
+		return "Yo waddup " + str([username, password, description, battle])
+	elif request.method == 'GET':
+		return render_template('postPicture.html')
 
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)
