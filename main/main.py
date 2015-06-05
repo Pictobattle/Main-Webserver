@@ -6,13 +6,13 @@ app = Flask(__name__)
 def main():
 	return render_template('main.html')
 
-@app.route('/postPicture')
+@app.route('/postPicture/')
 def postPicture():
 	return render_template('postPicture.html')
 
 
 #---------------------------------Static stuff:---------------------------------
-@app.route('/postPicture/record/', methods=['post'])
+@app.route('/postPicture/record', methods=['post'])
 def recordPost():
 	'''username=request.form.get("username")
 	password=request.form.get("password")
