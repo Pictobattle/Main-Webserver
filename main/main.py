@@ -26,6 +26,7 @@ def postPicture():
 		return render_template('postPicture.html')
 
 @app.route('/user/signUp', methods=['GET', 'POST'])
+def userSignUp():
 	if request.method == 'POST':
 		username=request.form.get("username",False)
 		password=request.form.get("password",False)
