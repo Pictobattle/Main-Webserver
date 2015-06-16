@@ -7,7 +7,7 @@ def main():
 	return render_template('main.html')
 
 
-@app.route('/postPicture',methods=['GET', 'POST'])
+@app.route('/postPicture', methods=['GET', 'POST'])
 def postPicture():
 	if request.method == 'POST': #a picture is being posted
 		username=request.form.get("username")
@@ -25,7 +25,7 @@ def postPicture():
 	else: #elif request.method == 'GET':  # returns post picture html
 		return render_template('postPicture.html')
 
-@app.route('/user/signUp' methods=['POST','GET'])
+@app.route('/user/signUp', methods=['GET', 'POST'])
 	if request.method == 'POST':
 		username=request.form.get("username",False)
 		password=request.form.get("password",False)
