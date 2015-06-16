@@ -9,7 +9,7 @@ def main():
 
 @app.route('/postPicture', methods=['POST','GET'])
 def postPicture():
-	if request.method == 'POST':
+	if request.method == 'POST': #a picture is being posted
 		username=request.form.get("username")
 		password=request.form.get("password")
 		description=str(request.form.get("description"))
