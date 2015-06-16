@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, jsonify, session
+from flask import Flask, render_template, redirect, url_for, request, jsonify, session, abort
 
 app = Flask(__name__)
 
@@ -34,6 +34,7 @@ def userSignUp():
 
 		if not username or not password or not email:
 			abort(500)
+
 		return "USER SUCCESSFULLY CREATED"
 	else: # if method is GET
 		return render_template('userSignUp.html')
