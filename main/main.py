@@ -27,9 +27,14 @@ def postPicture():
 
 @app.route('/user/signUp' methods=['POST','GET'])
 	if request.method == 'POST':
-		
-	else: # if method is GET
+		username=request.form.get("username",False)
+		password=request.form.get("password",False)
+		email=request.form.get("email",False)
 
+		if not username or not password or not email:
+			abort(500)
+	else: # if method is GET
+		return render_template('userSignUp.html')
 
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)
