@@ -22,7 +22,7 @@ def postPicture():
 		#else:
 
 		return "Yo waddup " + str([username, password, description, battle])
-	elif request.method == 'GET':
+	else: #elif request.method == 'GET':  # returns post picture html
 		return render_template('postPicture.html')
 
 @app.route('/user/signUp' methods=['POST','GET'])
