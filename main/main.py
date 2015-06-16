@@ -31,8 +31,8 @@ def postPicture():
 		password=request.form.get("password",False)
 		email=request.form.get("email",False)
 
-		if not username or not password or not email:
-			abort(500)
+	if not username or not password or not email:
+		abort(500)
 	else: # if method is GET
 		return render_template('userSignUp.html')
 
