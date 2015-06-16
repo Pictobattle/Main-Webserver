@@ -25,6 +25,12 @@ def postPicture():
 	elif request.method == 'GET':
 		return render_template('postPicture.html')
 
+@app.route('/user/signUp' methods=['POST','GET'])
+	if request.method == 'POST':
+		
+	else: # if method is GET
+
+
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)
 def page_not_found(e):
