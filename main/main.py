@@ -34,6 +34,7 @@ def userSignUp():
 
 		if not username or not password or not email:
 			abort(500)
+		return "USER SUCCESSFULLY CREATED"
 	else: # if method is GET
 		return render_template('userSignUp.html')
 
