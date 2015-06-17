@@ -31,7 +31,7 @@ def userSignUp():
 		username=request.form.get("username",False)
 		password=request.form.get("password",False)
 		email=request.form.get("email",False)
-		return str(username)
+		return "username: "+str(username)
 		if not username or not password or not email:
 			abort(500)
 
