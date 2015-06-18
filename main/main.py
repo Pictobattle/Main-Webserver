@@ -1,4 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request, jsonify, session, abort
+import os
+import json
 
 app = Flask(__name__)
 
@@ -35,10 +37,29 @@ def userSignUp():
 		password=request.form.get("password",False)
 		email=request.form.get("email",False)
 
-		
+		if not username or username==""
+			or not password or password==""
+			or not email or email=="":
 
-		if not username or not password or not email:
-			abort(500)
+			#abort(500)
+			return "plz fill it out m8"
+
+		newUserDir=userRootDir+"/"+username
+		if os.path.isdir(newUserDir)
+			return "dat usr name is usd alreaD"
+
+		shutil.copytree(exampleUserDir, newUserDir) #make user folder by copying template user
+
+		data = {
+		"password":password,
+		"email":email,
+		"dateJoined":u'March 18, 2015',
+		"bio":u'CEO-- Duh!',
+		"website":u'pictobattle.com'
+		}
+
+		with open(newUserDir+"/"+userDataFile, 'w') as outfile:
+    		json.dump(data, outfile)
 
 		return "USER SUCCESSFULLY CREATED"
 	else: # if method is GET
