@@ -2,6 +2,9 @@ from flask import Flask, render_template, redirect, url_for, request, jsonify, s
 
 app = Flask(__name__)
 
+userRootDir="/home/picto-battle/users"
+exampleUserDir="/home/picto-battle/template_user"
+userDataFile="details.json"
 @app.route('/')
 def main():
 	return render_template('main.html')
