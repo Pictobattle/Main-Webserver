@@ -7,6 +7,15 @@ app = Flask(__name__)
 userRootDir="/home/picto-battle/users"
 exampleUserDir="/home/picto-battle/template_user"
 userDataFile="details.json"
+
+def newUserFolderName(userFolderRoot):
+	fileFound= False
+	fileNumber= 1
+	while os.path.isdir(userFolderRoot+'/'+str(fileNumber)):
+		fileNumber+=1
+	return userFolderRoot+'/'+str(fileNumber)
+
+
 @app.route('/')
 def main():
 	return render_template('main.html')
