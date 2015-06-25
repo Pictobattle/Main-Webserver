@@ -5,6 +5,7 @@ import glob
 
 app = Flask(__name__)
 
+#global varbles
 userRootDir="/home/picto-battle/users"
 exampleUserDir="/home/picto-battle/template_user"
 userDataFile="details.json"
@@ -54,9 +55,14 @@ def userSignUp():
 			#abort(500)
 			return "plz fill it out m8"
 
-		newUserDir=userRootDir+"/"+username
+
+		if ii in glob.glob(userRootDir+'/*'):
+
+
+
+		'''newUserDir=userRootDir+"/"+username
 		if os.path.isdir(newUserDir)
-			return "dat usr name is usd alreaD"
+			return "dat usr name is usd alreaD"'''
 
 		shutil.copytree(exampleUserDir, newUserDir) #make user folder by copying template user
 
