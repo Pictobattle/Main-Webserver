@@ -91,6 +91,7 @@ def server_error(e):
 	return render_template('errorPages/50x.html'), 500
 
 
+# favicon is served by nginx
 """@app.route('/favicon.ico')
 def favicon():
 	return redirect(url_for('static', filename='favicon.ico'))"""
