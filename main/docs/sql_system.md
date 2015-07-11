@@ -110,3 +110,11 @@ CREATE TABLE friends
 	accepted CHAR(1) NOT NULL
 );
 ```
+
+===
+# SQL User
+
+```sql
+CREATE USER 'pictobattle'@'localhost';
+GRANT ALTER, SELECT ON pictobattle.* TO 'pictobattle'@'localhost';
+```
