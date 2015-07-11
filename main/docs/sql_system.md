@@ -118,3 +118,4 @@ CREATE TABLE friends
 CREATE USER 'pictobattle'@'localhost';
 GRANT ALTER, SELECT ON pictobattle.* TO 'pictobattle'@'localhost';
 ```
+The user can access and alter all of the tables in the database "pictobattle"
