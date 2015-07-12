@@ -6,6 +6,10 @@ app = Flask(__name__)
 def main():
 	return render_template('main.html')
 
+@app.route('/signUp', methods=['GET','POST'])
+def signUp():
+
+	return yo
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)
 def page_not_found(e):
