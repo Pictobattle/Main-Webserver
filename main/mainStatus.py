@@ -56,3 +56,4 @@ while True:
             payload = {'token': botKey, 'presence': 'away'}
             r = requests.post(presenceUrl, data=payload)
             print(r.text)
+        previousServerStatus = serverStatus
