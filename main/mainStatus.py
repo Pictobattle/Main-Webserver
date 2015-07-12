@@ -41,18 +41,18 @@ while True:
             # presence set
             payload = {'token': botKey, 'presence': 'auto'}
             r = requests.post(presenceUrl, data=payload)
-            return r.text
+            print(r.text)
             # message post
             payload = {'token': botKey, 'channel': 'webserverstatus', 'text': 'Web Server Online'}
             r = requests.post(postMessageUrl, data=payload)
-            return r.text
+            print(r.text)
         else: #changed to False
             #message post
             payload = {'token': botKey, 'channel': 'webserverstatus', 'text': 'Web Server Offline'}
             r = requests.post(postMessageUrl, data=payload)
-            return r.text
+            print(r.text)
 
             # presence set
             payload = {'token': botKey, 'presence': 'away'}
             r = requests.post(presenceUrl, data=payload)
-            return r.text
+            print(r.text)
