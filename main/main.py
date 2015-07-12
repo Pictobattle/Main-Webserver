@@ -10,7 +10,7 @@ def main():
 @app.route('/signUp', methods=['GET','POST'])
 def signUp():
 
-	return yo
+	return "yo"
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)
 def page_not_found(e):
