@@ -7,7 +7,7 @@ previousServerStatus=False
 presenceUrl="https://slack.com/api/users.setPresence"
 postMessageUrl="https://slack.com/api/chat.postMessage"
 botKey="xoxb-7546556583-hJSRQbEwKTNchrCdeEfsPxMT"
-channelName='webserverstatus'
+channelName='C07G385RD'
 
 while True:
     time.sleep(1)
