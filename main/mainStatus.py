@@ -7,7 +7,7 @@ previousServerStatus=False
 setActiveUrl="https://slack.com/api/users.setActive"
 setAwayUrl="https://slack.com/api/users.setPresence"
 postMessageUrl="https://slack.com/api/chat.postMessage"
-botKey="xoxb-7546556583-hJSRQbEwKTNchrCdeEfsPxMT"
+botKey="xoxb-7546556583-ICe26Ly9gsWqzoju8EuLt0Q8"
 channelName='C07G385RD'
 
 while True:
