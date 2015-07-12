@@ -11,6 +11,10 @@ def main():
 def signUp():
 
 	return "yo"
+
+@app.route('/areWeOnline')
+def thisIsStatic():
+	return "we must be..."
 #--------------------------HTTP Error Pages:------------------------------------
 @app.errorhandler(404)
 def page_not_found(e):
