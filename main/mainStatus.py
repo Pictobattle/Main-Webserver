@@ -1,7 +1,7 @@
 import time
 import requests
 
-staticReturnUrl="https://pictobattle.com/areWeOnline"
+staticReturnUrl="https://www.pictobattle.com/areWeOnline"
 serverStatus=False
 previousServerStatus=False
 presenceUrl="https://slack.com/api/users.setPresence"
