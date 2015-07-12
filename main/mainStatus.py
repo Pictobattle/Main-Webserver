@@ -7,6 +7,7 @@ previousServerStatus=False
 presenceUrl="https://slack.com/api/users.setPresence"
 postMessageUrl="https://slack.com/api/chat.postMessage"
 botKey="xoxb-7546556583-ICe26Ly9gsWqzoju8EuLt0Q8"
+botName="webserver"
 channelName='C07G385RD'
 
 while True:
@@ -28,12 +29,12 @@ while True:
             r = requests.post(presenceUrl, data=payload)
             print(r.text)
             # message post
-            payload = {'token': botKey, 'channel': channelName, 'text': 'Web Server Online'}
+            payload = {'token': botKey, 'channel': channelName, 'text': 'Web Server Online', 'username': botName}
             r = requests.post(postMessageUrl, data=payload)
             print(r.text)
         else: #changed to False
             #message post
-            payload = {'token': botKey, 'channel': channelName, 'text': 'Web Server Offline'}
+            payload = {'token': botKey, 'channel': channelName, 'text': 'Web Server Offline', 'username': botName}
             r = requests.post(postMessageUrl, data=payload)
             print(r.text)
 
