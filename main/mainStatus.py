@@ -22,6 +22,7 @@ while True:
         print("offline")
 
     if not serverStatus == previousServerStatus:
+        '''
         messagePayload= {'token': botKey, 'channel': channelName, 'text': 'Web Server Offline'}
         if serverStatus:
             presencePayload = {'token': botKey, 'presence': 'auto'}
@@ -33,8 +34,9 @@ while True:
             presencePayload= {'token': botKey, 'presence': 'away'}
             r = requests.post(presenceUrl, data=presencePayload)
 
-        #More repetitive version below
         '''
+        #Version above errored on seperated else
+
         if serverStatus: #changed to True
             # presence set
             payload = {'token': botKey, 'presence': 'auto'}
@@ -51,4 +53,3 @@ while True:
             # presence set
             payload = {'token': botKey, 'presence': 'away'}
             r = requests.post(presenceUrl, data=payload)
-            '''
