@@ -4,8 +4,7 @@ import requests
 staticReturnUrl="https://www.pictobattle.com/areWeOnline"
 serverStatus=False
 previousServerStatus=False
-setActiveUrl="https://slack.com/api/users.setActive"
-setAwayUrl="https://slack.com/api/users.setPresence"
+presenceUrl="https://slack.com/api/users.setPresence"
 postMessageUrl="https://slack.com/api/chat.postMessage"
 botKey="xoxb-7546556583-ICe26Ly9gsWqzoju8EuLt0Q8"
 channelName='C07G385RD'
@@ -24,9 +23,9 @@ while True:
 
     if not serverStatus == previousServerStatus:
         if serverStatus: #changed to True
-            # active set
-            payload = {'token': botKey}
-            r = requests.post(setActiveUrl, data=payload)
+            # presence set
+            payload = {'token': botKey, 'presence': 'auto'}
+            r = requests.post(presenceUrl, data=payload)
             print(r.text)
             # message post
             payload = {'token': botKey, 'channel': channelName, 'text': 'Web Server Online'}
@@ -38,8 +37,8 @@ while True:
             r = requests.post(postMessageUrl, data=payload)
             print(r.text)
 
-            # away set
+            # presence set
             payload = {'token': botKey, 'presence': 'away'}
-            r = requests.post(setAwayUrl, data=payload)
+            r = requests.post(presenceUrl, data=payload)
             print(r.text)
         previousServerStatus = serverStatus
