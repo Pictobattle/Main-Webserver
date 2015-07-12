@@ -12,7 +12,7 @@ channelName='webserverstatus'
 while True:
     time.sleep(1)
     print("beginning...")
-    r = requests.get(staticReturnUrl)
+    r = requests.get(staticReturnUrl, verify=True)
     content = r.text
     if content=="we must be...":
         serverStatus=True
