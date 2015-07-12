@@ -43,12 +43,12 @@ while True:
             r = requests.post(presenceUrl, data=payload)
             print(r.text)
             # message post
-            payload = {'token': botKey, 'channel': 'webserverstatus', 'text': 'Web Server Online'}
+            payload = {'token': botKey, 'channel': channelName, 'text': 'Web Server Online'}
             r = requests.post(postMessageUrl, data=payload)
             print(r.text)
         else: #changed to False
             #message post
-            payload = {'token': botKey, 'channel': 'webserverstatus', 'text': 'Web Server Offline'}
+            payload = {'token': botKey, 'channel': channelName, 'text': 'Web Server Offline'}
             r = requests.post(postMessageUrl, data=payload)
             print(r.text)
 
