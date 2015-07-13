@@ -13,6 +13,7 @@ def signUp():
 
 @app.route('/moreFoo')
 def moreFoo():
+	global foo
 	foo+=1
 	return str(foo)
 
