@@ -91,10 +91,11 @@ CREATE TABLE blocks
 ## "posts":
 
 ```sql
-CREATE TABLE blocks
+CREATE TABLE posts
 (
 	post_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	post_text VARCHAR(1000) NOT NULL,
+	repost CHAR(1) NOT NULL,
 	private CHAR(1) NOT NULL
 );
 ```
