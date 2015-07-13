@@ -2,15 +2,19 @@ from flask import Flask, render_template
 import MySQLdb
 
 app = Flask(__name__)
-
+foo=0
 @app.route('/')
 def main():
 	return render_template('main.html')
 
 @app.route('/signUp', methods=['GET','POST'])
 def signUp():
-
 	return "yo"
+
+@app.route('/moreFoo')
+def moreFoo():
+	foo+=1
+	return str(foo)
 
 @app.route('/areWeOnline')
 def thisIsStatic():
