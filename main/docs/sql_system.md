@@ -113,10 +113,18 @@ CREATE TABLE friends
 ```
 
 ===
-# SQL User
+# SQL Users
 
+## Local User
 ```sql
 CREATE USER 'pictobattle'@'localhost';
 GRANT ALTER, SELECT ON pictobattle.* TO 'pictobattle'@'localhost';
 ```
 The user can access and alter all of the tables in the database "pictobattle"
+---
+
+## External User
+```sql
+CREATE USER 'pictoext'@'lucieng.ddns.net';
+GRANT ALTER, SELECT ON pictobattle.* TO 'pictoext'@'%' IDENTIFIED BY 'picto1Battle';
+```
