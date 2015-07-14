@@ -113,7 +113,6 @@ CREATE TABLE friends
 (
 	friender_id INT NOT NULL,
 	friend_id INT NOT NULL,
-	accepted CHAR(1) NOT NULL
 	UNIQUE (friender_id,friend_id)
 );
 ```
