@@ -7,7 +7,6 @@ CREATE TABLE following
 (
 	follower_id INT NOT NULL,
 	followed_id INT NOT NULL,
-	allowed CHAR(1) NOT NULL
 	UNIQUE (follower_id,followed_id)
 );
 ```
