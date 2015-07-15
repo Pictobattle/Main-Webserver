@@ -8,13 +8,16 @@ localTest=True
 sqlDuplicateErrorCode = 1062
 
 sqlHost="localhost"
+sqlPass="picto1Battle"
+sqlUser="pictoext"
+sqlDb="pictobattle"
 if localTest:
 	sqlHost="lucieng.ddns.net"
 
 db = MySQLdb.connect(host=sqlHost,
-                     user="pictoext",
-                      passwd="picto1Battle",
-                      db="pictobattle")
+                     user=sqlUser,
+                      passwd=sqlPass,
+                      db=sqlDb)
 
 @app.route('/')
 def main():
