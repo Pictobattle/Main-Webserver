@@ -130,5 +130,5 @@ The user can access and alter all of the tables in the database "pictobattle"
 ## External User
 ```sql
 CREATE USER 'pictoext'@'lucieng.ddns.net';
-GRANT ALTER, INSERT, SELECT ON pictobattle.* TO 'pictoext'@'%' IDENTIFIED BY 'picto1Battle';
+GRANT ALTER, INSERT, SELECT, UPDATE ON pictobattle.* TO 'pictoext'@'%' IDENTIFIED BY 'picto1Battle';
 ```
