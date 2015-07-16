@@ -14,10 +14,12 @@ sqlDb="pictobattle"
 if localTest:
 	sqlHost="lucieng.ddns.net"
 
-db = MySQLdb.connect(host=sqlHost,
-                     user=sqlUser,
-                      passwd=sqlPass,
-                      db=sqlDb)
+db = MySQLdb.connect(
+	host=sqlHost,
+    user=sqlUser,
+	passwd=sqlPass,
+	db=sqlDb
+	)
 
 @app.route('/')
 def main():
