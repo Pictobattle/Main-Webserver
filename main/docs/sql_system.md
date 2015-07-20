@@ -116,6 +116,30 @@ CREATE TABLE friends
 );
 ```
 
+---
+## "battles"
+
+```sql
+CREATE TABLE battles
+(
+	battler_image_id INT NOT NULL,
+	battling_image_id INT NOT NULL,
+	UNIQUE (battler_image_id, battling_image_id)
+);
+```
+
+---
+## "battleSuggestions"
+
+```sql
+CREATE TABLE battleSuggestions
+(
+	battler_image_id INT NOT NULL,
+	battling_image_id INT NOT NULL,
+	UNIQUE (battler_image_id, battling_image_id)
+);
+```
+
 ===
 # SQL Users
 
@@ -132,3 +156,5 @@ The user can access and alter all of the tables in the database "pictobattle"
 CREATE USER 'pictoext'@'lucieng.ddns.net';
 GRANT ALTER, INSERT, SELECT, UPDATE ON pictobattle.* TO 'pictoext'@'%' IDENTIFIED BY 'picto1Battle';
 ```
+
+<b>NOTE TO EDITOR:</b> Only push to github ONCE changes have been made on the sql server
