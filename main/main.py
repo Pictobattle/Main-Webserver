@@ -157,6 +157,14 @@ def signUp():
 		db.close()
 		return str(tableVals)
 
+@app.route('/test')
+def test():
+	global readDb
+	return checkSQlExistance(readDb, {"email":"dddddd"}, "logins")
+
+@app.route('/cheese')
+def cheese():
+	return str(readDb)
 @app.route('/areWeOnline')
 def thisIsStatic():
 	return "we must be..."
