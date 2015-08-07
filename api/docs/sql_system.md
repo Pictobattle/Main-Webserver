@@ -7,7 +7,7 @@ CREATE TABLE following
 (
 	follower_id INT NOT NULL,
 	followed_id INT NOT NULL,
-	allowed CHAR(1) NOT NULL
+	UNIQUE (follower_id,followed_id)
 );
 ```
 
@@ -32,7 +32,8 @@ CREATE TABLE comments
 CREATE TABLE likes
 (
 	liker_id INT NOT NULL,
-	image_id INT NOT NULL
+	image_id INT NOT NULL,
+	UNIQUE (liker_id,image_id)
 );
 ```
 
@@ -44,7 +45,8 @@ CREATE TABLE logins
 (
 	user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	email VARCHAR(100) NOT NULL,
-	password VARCHAR(100) NOT NULL
+	password VARCHAR(100) NOT NULL,
+	UNIQUE (email)
 );
 ```
 
@@ -72,7 +74,8 @@ CREATE TABLE profile_sharing
 (
 	profile_id INT NOT NULL,
 	user_id INT NOT NULL,
-	accepted CHAR(1) NOT NULL
+	accepted CHAR(1) NOT NULL,
+	UNIQUE (profile_id,user_id)
 );
 ```
 
@@ -83,7 +86,8 @@ CREATE TABLE profile_sharing
 CREATE TABLE blocks
 (
 	blocker_id INT NOT NULL,
-	blocked_id INT NOT NULL
+	blocked_id INT NOT NULL,
+	UNIQUE (blocker_id, blocked_id)
 );
 ```
 
@@ -108,7 +112,31 @@ CREATE TABLE friends
 (
 	friender_id INT NOT NULL,
 	friend_id INT NOT NULL,
-	accepted CHAR(1) NOT NULL
+	UNIQUE (friender_id,friend_id)
+);
+```
+
+---
+## "battles"
+
+```sql
+CREATE TABLE battles
+(
+	battler_image_id INT NOT NULL,
+	battling_image_id INT NOT NULL,
+	UNIQUE (battler_image_id, battling_image_id)
+);
+```
+
+---
+## "battleSuggestions"
+
+```sql
+CREATE TABLE battleSuggestions
+(
+	battler_image_id INT NOT NULL,
+	battling_image_id INT NOT NULL,
+	UNIQUE (battler_image_id, battling_image_id)
 );
 ```
 
@@ -118,7 +146,7 @@ CREATE TABLE friends
 ## Local User
 ```sql
 CREATE USER 'pictobattle'@'localhost';
-GRANT ALTER, SELECT ON pictobattle.* TO 'pictobattle'@'localhost';
+GRANT ALTER, INSERT, SELECT ON pictobattle.* TO 'pictobattle'@'localhost';
 ```
 The user can access and alter all of the tables in the database "pictobattle"
 ---
@@ -126,5 +154,7 @@ The user can access and alter all of the tables in the database "pictobattle"
 ## External User
 ```sql
 CREATE USER 'pictoext'@'lucieng.ddns.net';
-GRANT ALTER, SELECT ON pictobattle.* TO 'pictoext'@'%' IDENTIFIED BY 'picto1Battle';
+GRANT ALTER, INSERT, SELECT, UPDATE ON pictobattle.* TO 'pictoext'@'%' IDENTIFIED BY 'picto1Battle';
 ```
+
+<b>NOTE TO EDITOR:</b> Only push to github ONCE changes have been made on the sql server
