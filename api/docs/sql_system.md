@@ -148,7 +148,7 @@ CREATE TABLE battleSuggestions
 CREATE USER 'pictobattle'@'localhost';
 GRANT ALTER, INSERT, SELECT ON pictobattle.* TO 'pictobattle'@'localhost';
 ```
-<b></b>The user can access and alter all of the tables in the database "pictobattle"
+The user can access and alter all of the tables in the database "pictobattle"
 ---
 
 ## External User
