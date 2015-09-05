@@ -127,7 +127,7 @@ def signUp():
 
 	table="logins"
 	cur.execute('SHOW COLUMNS FROM ' + table + ';')
-	return str(cur.fetchall())
+	#return str(cur.fetchall())
 
 
 	try:
@@ -158,7 +158,7 @@ def signUp():
 @app.route('/test')
 def test():
 	global readDb
-	return checkSQlExistance(readDb, {"email":"dddddd"}, "logins")
+	return checkSQlExistance(readDb, {"email":"ddd"}, "logins")
 
 @app.route('/cheese')
 def cheese():
