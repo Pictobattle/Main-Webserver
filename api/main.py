@@ -106,7 +106,8 @@ def checkSQlExistance(connection, colsAndValues, table):
 
 @app.route('/')
 def main():
-	return render_template('main.html')
+	return "names joe"
+	#return render_template('main.html')
 
 @app.route('/user/signUp', methods=['GET','POST'])
 def signUp():
