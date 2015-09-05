@@ -106,7 +106,8 @@ def checkSQlExistance(connection, colsAndValues, table):
 
 @app.route('/')
 def main():
-	return render_template('main.html')
+	return "names joe"
+	#return render_template('main.html')
 
 @app.route('/user/signUp', methods=['GET','POST'])
 def signUp():
@@ -180,7 +181,6 @@ def server_error(e):
 
 if __name__ == "__main__":
 	readDb=sqlServerConnect()
-	app.secret_key = 'RC0ZT6kkTQUSHt6hf0GFHhgddWaew3ApGRZnzcPPtClT4zhKiD6OWhlW4t2Z0X2'
 	app.debug = True
 	app.run(
 		host='127.0.0.1',
