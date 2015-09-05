@@ -8,12 +8,13 @@ localTest=True
 sqlDuplicateErrorCode = 1062
 
 sqlHost="127.0.0.1"
-sqlPass="pictobattle"
+sqlPass=""
+sqlUser="pictobattle"
 sqlDb="pictobattle"
 if localTest:
+	sqlHost="lucieng.ddns.net"
 	sqlPass="picto1Battle"
 	sqlUser="pictoext"
-	sqlHost="lucieng.ddns.net"
 
 '''readDb = MySQLdb.connect(
 	host="lucieng.ddns.net",
@@ -184,5 +185,5 @@ if __name__ == "__main__":
 	app.debug = True
 	app.run(
 		host='127.0.0.1',
-		port=4000
+		port=8081
 		)
