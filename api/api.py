@@ -110,54 +110,50 @@ def main():
 	return "names joe"
 	#return render_template('main.html')
 
-@app.route('/user/signUp', methods=['GET','POST'])
+@app.route('/user/signUp', methods=['POST'])
 def signUp():
+	db = sqlServerConnect() # creates a connection to the database
 
-	if request.method == 'GET':
-		return render_template('userSignUp.html')
-	else:
-		db = sqlServerConnect() # creates a connection to the database
+	email=request.form.get("email")
+	email=MySQLdb.escape_string(email)
+	password=request.form.get("password")
+	password=MySQLdb.escape_string(password)
 
-		email=request.form.get("email")
-		email=MySQLdb.escape_string(email)
-		password=request.form.get("password")
-		password=MySQLdb.escape_string(password)
-
-		#return checkSQlExistance(readDb, {"email":"poo"},"logins")
-		#return test()
+	#return checkSQlExistance(readDb, {"email":"poo"},"logins")
+	#return test()
 
 
-		cur = db.cursor() # creating SQL cursor
+	cur = db.cursor() # creating SQL cursor
 
-		table="logins"
-		cur.execute('SHOW COLUMNS FROM ' + table + ';')
-		return str(cur.fetchall())
+	table="logins"
+	cur.execute('SHOW COLUMNS FROM ' + table + ';')
+	return str(cur.fetchall())
 
 
-		try:
-			executeString=(
-				#'IF NOT EXISTS(SELECT TOP 1 user_id FROM logins WHERE email = "' + email + '"); '
-				'INSERT INTO logins (email,password) VALUES ("' + email + '","' + password + '");'
-			)
-			#cur.execute('INSERT INTO logins (email,password) VALUES ("' + email + '","' + password + '") ON DUPLICATE KEY UPDATE user_id = LAST_INSERT_ID(user_id);')
-			cur.execute('INSERT INTO logins (email,password) VALUES ("' + email + '","' + password + '");')
-		except MySQLdb.IntegrityError, message:
-			errorcode = message[0]
-			if errorcode == sqlDuplicateErrorCode:
-				return "a dupe"
-			else:
-				raise # unexpected error, reraise
+	try:
+		executeString=(
+			#'IF NOT EXISTS(SELECT TOP 1 user_id FROM logins WHERE email = "' + email + '"); '
+			'INSERT INTO logins (email,password) VALUES ("' + email + '","' + password + '");'
+		)
+		#cur.execute('INSERT INTO logins (email,password) VALUES ("' + email + '","' + password + '") ON DUPLICATE KEY UPDATE user_id = LAST_INSERT_ID(user_id);')
+		cur.execute('INSERT INTO logins (email,password) VALUES ("' + email + '","' + password + '");')
+	except MySQLdb.IntegrityError, message:
+		errorcode = message[0]
+		if errorcode == sqlDuplicateErrorCode:
+			return "a dupe"
+		else:
+			raise # unexpected error, reraise
 
-		cur.execute("SELECT * FROM logins")
+	cur.execute("SELECT * FROM logins")
 
-		tableVals=[]
-		for ii in cur.fetchall():
-			print(ii[0])
-			tableVals.append(ii)
+	tableVals=[]
+	for ii in cur.fetchall():
+		print(ii[0])
+		tableVals.append(ii)
 
-		db.commit()
-		db.close()
-		return str(tableVals)
+	db.commit()
+	db.close()
+	return str(tableVals)
 
 @app.route('/test')
 def test():
