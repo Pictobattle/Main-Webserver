@@ -12,7 +12,7 @@ sqlPass=""
 sqlUser="pictobattle"
 sqlDb="pictobattle"
 if localTest:
-	sqlHost="lucieng.ddns.net"
+	sqlHost="lucraspi"
 	sqlPass="picto1Battle"
 	sqlUser="pictoext"
 
