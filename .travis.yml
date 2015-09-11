@@ -6,6 +6,6 @@ install:
   - pip install mysql-python Flask
 #  - pip install -r requirements.txt
 # command to run tests
-#script: bash startMain.sh
-script: pwd
+script: bash startMain.sh
+#script: pwd
 # look here 
