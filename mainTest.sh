@@ -1,3 +1,2 @@
-cd main
-python main.py &
+python main/main.py &
 python mainTest.py
