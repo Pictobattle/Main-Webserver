@@ -1,7 +1,9 @@
 import httplib, urllib
 
 conn = httplib.HTTPConnection("localhost:8080")
-conn.request("GET", "/")
+body=[]
+headers=[]
+conn.request("GET", "/", body, headers)
 response = conn.getresponse()
 conn.close()
 
