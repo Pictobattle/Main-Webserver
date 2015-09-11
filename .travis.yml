@@ -7,5 +7,5 @@ install:
 #  - pip install -r requirements.txt
 # command to run tests
 #script: bash startMain.sh
-script: pwd
+script: ls
 # look here 
