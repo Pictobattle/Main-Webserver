@@ -5,4 +5,4 @@ conn.request("GET", "/")
 response = conn.getresponse()
 conn.close()
 
-return response
+print(response)
