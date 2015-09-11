@@ -1,1 +1,2 @@
-cd main/main.py
+cd main
+python main.py
